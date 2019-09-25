@@ -6,3 +6,4 @@ Test creating online
 4. To completely automate the process right from creating tests to the point when the completed tests are evaluated
 
 I am using Swing , JFrame, Java ,Oracle Database in Project.I am using GUI function in my project...Based on GUI and connection to database i m creating project.
+First i have to install Oracle database and Eclipse .. 
