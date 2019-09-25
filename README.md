@@ -4,3 +4,5 @@ Test creating online
 2. To enable the application owner to effectively manage, creation and assignment of tests 
 3. To enable the application owner to create customized tests, choosing questions depending on the skills being tested 
 4. To completely automate the process right from creating tests to the point when the completed tests are evaluated
+
+I am using Swing , JFrame, Java ,Oracle Database in Project.I am using GUI function in my project...Based on GUI and connection to database i m creating project.
