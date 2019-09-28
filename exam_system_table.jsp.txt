@@ -1,0 +1,86 @@
+
+
+-- Host: localhost    Database: TEST 
+-- ------------------------------------------------------
+
+Table structure for table `users`
+
+
+CREATE TABLE userss_detail(
+	Name varchar(10),
+	Emailid varchar(15),
+	Password varchar(8),
+	Phoneno NUMBER(10)
+);
+
+Table structure for table `Login`
+
+
+CREATE TABLE users_detail(
+	Emailid varchar(60),
+	Password varchar(8)
+);
+
+
+
+Table structure for table `answers`
+
+
+CREATE TABLE answers_detail(
+    Id NUMBER(8) NOT NULL,
+    ans1 varchar(20) NOT NULL,
+    ans2 varchar(10) NOT NULL,
+    ans3 varchar(10) NOT NULL
+);
+
+
+
+Table structure for table `mark`
+
+
+CREATE TABLE marks_detail(
+   Id NUMBER(10) NOT NULL,
+   mark NUMBER(10) NOT NULL
+  );
+
+
+ Table structure for table `exams`;
+
+DROP TABLE IF EXISTS `exams`;
+
+CREATE TABLE `exams` (
+  `exam_name` int(11) NOT NULL AUTO_INCREMENT,
+  `std_id` varchar(45) NOT NULL,
+  `course_name` varchar(45) NOT NULL,
+  `total_marks` varchar(45) NOT NULL,
+  `obt_marks` varchar(45) DEFAULT NULL,
+  `date` varchar(45) NOT NULL,
+  `start_time` varchar(45) NOT NULL,
+  `end_time` varchar(45) DEFAULT NULL,
+  `exam_time` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`exam_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+
+
+
+ Table structure for table `questions`
+
+
+DROP TABLE IF EXISTS `questions`;
+
+CREATE TABLE questions (
+  course_name varchar(45) NOT NULL,
+  question varchar(255) NOT NULL,
+  opt1 varchar(85) NOT NULL,
+  opt2 varchar(85) NOT NULL,
+  opt3 varchar(85) NOT NULL,
+  opt4 varchar(85) NOT NULL,
+  correct varchar(85) NOT NULL,
+) 
+
+
+
+
+
+
