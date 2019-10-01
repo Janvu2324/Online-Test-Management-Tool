@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 import java.awt.SystemColor;
 
-public class Correctans extends JFrame {
+public class CorrectansofC extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -39,7 +39,7 @@ public class Correctans extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Correctans frame = new Correctans();
+					CorrectansofC frame = new CorrectansofC();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class Correctans extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Correctans() {
+	public CorrectansofC() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 467, 454);
 		contentPane = new JPanel();
@@ -122,7 +122,7 @@ public class Correctans extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				conn = JDBC.dbconnect();
 				try {
-					String sql1="select * from answers_detail ";
+					String sql1="select * from cans_detail ";
 				     pst=(OraclePreparedStatement) conn.prepareStatement(sql1);
                     rs = (OracleResultSet) pst.executeQuery();
                     if(rs.next()) {

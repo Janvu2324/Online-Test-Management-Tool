@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class Marks extends JFrame {
@@ -85,10 +86,13 @@ public class Marks extends JFrame {
 		textField_1.setColumns(10);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				conn = JDBC.dbconnect();
 				try {
-					String insert_data="Select mark from mark where Emailid = ?";
+			
+					String insert_data="Select mark from m_detail where Emailid = ?";
    					pst=(OraclePreparedStatement) conn.prepareStatement(insert_data);
    					pst.setString(1, textField.getText());
                     rs = (OracleResultSet) pst.executeQuery();
@@ -97,29 +101,31 @@ public class Marks extends JFrame {
                     	textField_1.setText(mark);
     					
                     }else {
-                    	JOptionPane.showMessageDialog(null,"Wrong Email id..","Error",JOptionPane.ERROR_MESSAGE);
+                    	JOptionPane.showMessageDialog(null, "Wrong Email..");
                     }
 				}
-				catch(Exception e1) {
+				catch(SQLException e1) {
 					JOptionPane.showMessageDialog(null,e1);
 				}
 			}
 		});
-		btnSearch.setToolTipText("Search with Email");
-		btnSearch.setBounds(309, 129, 89, 23);
+		btnSearch.setToolTipText("Search with Emailid");
+		btnSearch.setBounds(309, 129, 99, 33);
 		contentPane.add(btnSearch);
 		
 		JButton btnNewButton = new JButton("HOME");
+		btnNewButton.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login login = new Login();
 				login.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(40, 365, 89, 23);
+		btnNewButton.setBounds(40, 355, 89, 33);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Correct Ans");
+		btnNewButton_1.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
 		btnNewButton_1.setBackground(new Color(255, 182, 193));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -127,7 +133,7 @@ public class Marks extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(358, 365, 112, 23);
+		btnNewButton_1.setBounds(309, 355, 161, 33);
 		contentPane.add(btnNewButton_1);
 	}
 }

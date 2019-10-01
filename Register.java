@@ -109,7 +109,7 @@ public class Register extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				conn = JDBC.dbconnect();
 				try {
-					String insert_data="select Emailid from users_detail where Emailid=?";
+					String insert_data="select Emailid from uss_detail where Emailid=?";
 					pst=(OraclePreparedStatement) conn.prepareStatement(insert_data);
 					pst.setString(1, textField_1.getText());
 					rs = (OracleResultSet) pst.executeQuery();
@@ -127,7 +127,7 @@ public class Register extends JFrame {
 	                   else
 					   {
 	                	
-	                	String data="INSERT INTO users_detail VALUES(?,?,?,?)";
+	                	String data="INSERT INTO uss_detail VALUES(?,?,?,?)";
 	   					pst=(OraclePreparedStatement) conn.prepareStatement(data);
 	   					pst.setString(1, textField.getText());
 	   					pst.setString(2, textField_1.getText());

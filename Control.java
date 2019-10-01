@@ -96,7 +96,8 @@ public class Control extends JFrame {
 		JButton C = new JButton("Start Exam");
 		C.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cque login = new Cque();
+				conn = JDBC.dbconnect();
+				CExam login = new CExam();
 				login.setVisible(true);
 			}
 		});
@@ -109,6 +110,7 @@ public class Control extends JFrame {
 		JButton button = new JButton("Start Exam");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				conn = JDBC.dbconnect();
 				JavaExam login = new JavaExam();
 				login.setVisible(true);
 			}

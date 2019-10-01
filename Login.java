@@ -107,7 +107,7 @@ public class Login extends JFrame {
 						JOptionPane.showMessageDialog(null,"Email and Password not entered..");
 					}
 					else {
-						String queary="INSERT INTO login_detail VALUES (?,?)";
+						String queary="INSERT INTO log_detail VALUES (?,?)";
 						pst=(OraclePreparedStatement) conn.prepareStatement(queary);
 						pst.setString(1, textField.getText());
 						pst.setString(2, pass.getText());
